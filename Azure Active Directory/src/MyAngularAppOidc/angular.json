@@ -19,7 +19,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets", "src/silent-renew.html"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/silent-renew.html"
+            ],
             "styles": ["src/styles.css"],
             "scripts": []
           },
@@ -58,8 +62,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "angular-oidc-oauth2:build",
-            "sslKey": "certs/dev_localhost.key",
-            "sslCert": "certs/dev_localhost.pem",
+            "sslKey": "certs/server.key",
+            "sslCert": "certs/server.crt",
             "port": 4200
           },
           "configurations": {
@@ -81,7 +85,11 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": ["src/favicon.ico", "src/assets", "src/silent-renew.html"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/silent-renew.html"
+            ],
             "styles": ["src/styles.css"],
             "scripts": []
           }

@@ -1,7 +1,11 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { AuthModule, OidcConfigService, LogLevel } from 'angular-auth-oidc-client';
+import {
+  AuthModule,
+  OidcConfigService,
+  LogLevel,
+} from 'angular-auth-oidc-client';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { UnauthorizedComponent } from './unauthorized/unauthorized.component';
@@ -12,19 +16,21 @@ import { LogoutComponent } from './logout/logout.component';
 export function configureAuth(oidcConfigService: OidcConfigService) {
   return () =>
     oidcConfigService.withConfig({
-            stsServer: 'https://login.microsoftonline.com/a8ad445d-cb71-4d2b-bedd-f4dd8fee406e',
-            authWellknownEndpoint: 'https://login.microsoftonline.com/a8ad445d-cb71-4d2b-bedd-f4dd8fee406e/v2.0/.well-known/openid-configuration',
-            redirectUrl: window.location.origin,
-            postLogoutRedirectUri: window.location.origin,
-            clientId: 'fdf59ce4-736c-4e4a-ad98-6a505a94c9d4',
-            scope: 'openid api://7d21bda8-d3e0-4eba-a470-c5d9916a6671/data.read',
-            responseType: 'code',
-            silentRenew: true,
-            maxIdTokenIatOffsetAllowedInSeconds: 600,
-            issValidationOff: true, // this needs to be true if using a common endpoint in Azure
-            autoUserinfo: false,
-            silentRenewUrl: window.location.origin + '/silent-renew.html',
-            logLevel: LogLevel.Debug
+      stsServer:
+        'https://login.microsoftonline.com/4d21d8ba-7ebe-42b4-8074-6ff2514856fb',
+      authWellknownEndpoint:
+        'https://login.microsoftonline.com/4d21d8ba-7ebe-42b4-8074-6ff2514856fb/v2.0/.well-known/openid-configuration',
+      redirectUrl: window.location.origin,
+      postLogoutRedirectUri: window.location.origin,
+      clientId: '1759825c-4dea-4d84-85d3-f3f96a133e34',
+      scope: 'openid api://134258d0-a376-4a1c-8e3d-5f99679575e7/data.read',
+      responseType: 'code',
+      silentRenew: true,
+      maxIdTokenIatOffsetAllowedInSeconds: 600,
+      issValidationOff: true, // this needs to be true if using a common endpoint in Azure
+      autoUserinfo: false,
+      silentRenewUrl: window.location.origin + '/silent-renew.html',
+      logLevel: LogLevel.Debug,
     });
 }
 
